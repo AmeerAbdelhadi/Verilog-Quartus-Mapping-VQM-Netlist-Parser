@@ -1,0 +1,18 @@
+In a scripting language of your choice, write a Verilog Quartus Mapping (VQM) netlist parser to produce a CSV file of all nodes in the given netlist (fp_pow.vqm) and their respective fanouts, ordered by fanout (highest first). Example output:
+
+net_a,1000
+net_b,999
+net_c,100
+
+The Verilog files in /sim contain declarations of all modules present in the VQM. Treat assign statements as though they were single input-single output gates.
+
+You may make use of any libraries that come as part of the standard package for your chosen scripting language, but not those that require independent installation.
+
+Ideally, your solution should also:
+
+- Be fast.
+- Be intelligible.
+- Work for other device families, given the appropriate module declaration input.
+- Be easily adaptable to other graph-processing tasks.
+
+Hint: ignore [a-z]+_unconnected_wire_\d+ -- these are present by virtue of a bug in the netlist writer for Cyclone V devices.
